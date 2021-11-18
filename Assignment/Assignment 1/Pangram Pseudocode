@@ -1,0 +1,28 @@
+DECLARE   str1 : STRING
+DECLARE  thischar : CHARACTER
+DECLARE  isallalpha : BOOLEAN
+DECLARE count, alphapos : INTEGER
+
+str1 ( “”
+thischar ( ‘’
+isallalpha ( TRUE
+count ( 0
+alphapos ( 0
+alpha ( “ABCDEFGHIJKLMNOPQRSTUVWXYZ”
+
+Input “enter string”, str1
+str1 ( UCASE(str1)
+FOR count ( 1 TO LEN(alpha)
+   thischar ( MID(str1, count, 1)
+     alphapos ( LOCATE(str1, thischar)
+    IF alphapos = 0
+    THEN 
+        isallalpha ( FALSE
+     Exit FOR
+   ENDIF
+NEXT
+IF isallalpha ( TRUE
+ THEN
+ OUTPUT “enter string are all alphabet”
+ELSE
+OUTPUT “enter string are all not alphabet”
